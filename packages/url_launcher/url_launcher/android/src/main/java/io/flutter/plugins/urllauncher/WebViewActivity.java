@@ -33,16 +33,16 @@ public class WebViewActivity extends Activity {
    * */
   public static String ACTION_CLOSE = "close action";
 
-  private final BroadcastReceiver broadcastReceiver =
-      new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-          String action = intent.getAction();
-          if (ACTION_CLOSE.equals(action)) {
-            finish();
-          }
-        }
-      };
+//   private final BroadcastReceiver broadcastReceiver =
+//       new BroadcastReceiver() {
+//         @Override
+//         public void onReceive(Context context, Intent intent) {
+//           String action = intent.getAction();
+//           if (ACTION_CLOSE.equals(action)) {
+//             finish();
+//           }
+//         }
+//       };
 
   private final WebViewClient webViewClient =
       new WebViewClient() {
@@ -139,7 +139,7 @@ public class WebViewActivity extends Activity {
     webview.setWebChromeClient(new FlutterWebChromeClient());
 
     // Register receiver that may finish this Activity.
-    registerReceiver(broadcastReceiver, closeIntentFilter);
+   // registerReceiver(broadcastReceiver, closeIntentFilter);
   }
 
   private Map<String, String> extractHeaders(Bundle headersBundle) {
